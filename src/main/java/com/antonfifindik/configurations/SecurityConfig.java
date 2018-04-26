@@ -1,5 +1,6 @@
 package com.antonfifindik.configurations;
 
+import com.antonfifindik.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -22,11 +23,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().permitAll();
     }
 
+    @Autowired
+    UserService userService;
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 //        auth.inMemoryAuthentication().withUser("user").password("123456789").roles("USER");
 //        auth.inMemoryAuthentication().withUser("user2").password("123456789").roles("USER");
-      //TODO..  auth.userDetailsService()
+       auth.userDetailsService(userService);
     }
 }
