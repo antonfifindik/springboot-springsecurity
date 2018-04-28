@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Пример на bootstrap 4: Пользовательская форма и дизайн для простой формы входа.">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="https://www.javacodegeeks.com/wp-content/uploads/2014/07/spring-security-project.png">
 
     <title>Страница входа</title>
 
