@@ -1,5 +1,6 @@
 package com.antonfifindik.configurations;
 
+import com.antonfifindik.domain.Role;
 import com.antonfifindik.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/readme.txt", "/css/*").permitAll()
+                .antMatchers("/admin.txt").hasAuthority(Role.ADMIN.getAuthority())
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
